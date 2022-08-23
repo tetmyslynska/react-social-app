@@ -1,6 +1,6 @@
 import './Home.css';
 import axios from 'axios';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import Post from '../components/Post';
 import AddPost from '../components/AddPost';
 

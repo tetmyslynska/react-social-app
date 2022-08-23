@@ -10,19 +10,20 @@ const AppNav = (props)=> {
         axios
         .post("https://akademia108.pl/api/social-app/user/logout")
         .then((res)=> {
-                console.log(res.data)
-                if(res.data.message) {
-                   props.setUser(null);
-                    localStorage.setItem('user', null); 
-                }
-            })
+            if(res.data.message) {
+                props.setUser(null);
+                localStorage.setItem("user", null); 
+            }
+                   
+        })
         
         .catch((error)=>{
             props.setUser(null);
-            localStorage.setItem('user', null); 
+            localStorage.setItem("user", null); 
             console.error(error);
         });
     }
+    
     return(
         <nav className="mainNav">
             <ul>
