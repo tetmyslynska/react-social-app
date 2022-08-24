@@ -35,6 +35,11 @@
 
 .post .likes {
     text-align: right;
+    font-weight: bold;
+}
+
+.post .likes button {
+   margin: 0 5px; 
 }
 
 .deleteConfirmation {
