@@ -33,27 +33,14 @@ const Post = (props) => {
     axios
       .post(
         "https://akademia108.pl/api/social-app/post/" +
-          (isLiked ? "dislike" : "like"),
+          (isLiked ? "like" : "dislike"),
         {
           post_id: id,
         }
       )
       .then(() => {
-        let newLikesCount = likesCount;
-
-        if(likesCount === 0){
-            newLikesCount = likesCount + 1;
-        }else if (likesCount > 0) {
-            let test;
-            if(isLiked){
-                test = likesCount - 1;
-            }else {
-                test = likesCount + 1;
-            }
-            newLikesCount = test;
-        }
-
-        setLikesCount(newLikesCount);
+       
+        setLikesCount(likesCount + (isLiked ? 1 : -1));
         setDoesUserLiked(!isLiked);
       });
   };
@@ -81,7 +68,7 @@ const Post = (props) => {
               className="btn"
               onClick={() => likePost(props.post.id, doesUserLiked)}
             >
-              {doesUserLiked ? "dislike" : "like"}
+              {doesUserLiked ? "like" : "dislike"}
             </button>
           )}
 
