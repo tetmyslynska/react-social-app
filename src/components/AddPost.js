@@ -15,7 +15,7 @@ const AddPost = (props) => {
     }
 
     axios
-      .post("https://akademia108.pl/api/social-app/post/add", {
+      .post('https://akademia108.pl/api/social-app/post/add', {
         content: postContent,
       })
       .then(() => {
